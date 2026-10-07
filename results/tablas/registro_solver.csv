@@ -1,0 +1,653 @@
+modelo,etapa,solver,LpStatus,sol_status,estado,segundos
+Base,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.58
+Base,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cota_fisica,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.02
+cota_fisica,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cota_sin_distancia,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.02
+cota_sin_distancia,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cota_fisica_solo_osrm,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.02
+cota_fisica_solo_osrm,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+presupuesto_10%,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.39
+presupuesto_10%,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+relaja_B,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.03
+relaja_B,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+relaja_K,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.18
+relaja_K,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+relaja_D,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.57
+relaja_D,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+presupuesto_20%,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.03
+presupuesto_20%,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+relaja_B,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.13
+relaja_B,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+relaja_K,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.04
+relaja_K,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+relaja_D,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.04
+relaja_D,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+presupuesto_30%,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.03
+presupuesto_30%,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+relaja_B,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.7
+relaja_B,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+relaja_K,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.04
+relaja_K,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+relaja_D,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.17
+relaja_D,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.04
+presupuesto_40%,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.53
+presupuesto_40%,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+relaja_B,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.57
+relaja_B,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+relaja_K,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.07
+relaja_K,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+relaja_D,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.48
+relaja_D,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+presupuesto_50%,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.04
+presupuesto_50%,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+relaja_B,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.46
+relaja_B,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+relaja_K,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.02
+relaja_K,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+relaja_D,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.05
+relaja_D,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+presupuesto_60%,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.64
+presupuesto_60%,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.05
+relaja_B,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.08
+relaja_B,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+relaja_K,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.67
+relaja_K,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.07
+relaja_D,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.22
+relaja_D,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.07
+presupuesto_70%,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.05
+presupuesto_70%,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+relaja_B,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.02
+relaja_B,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+relaja_K,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.33
+relaja_K,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+relaja_D,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.09
+relaja_D,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+presupuesto_80%,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.65
+presupuesto_80%,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+relaja_B,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.44
+relaja_B,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+relaja_K,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.71
+relaja_K,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.05
+relaja_D,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.49
+relaja_D,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+presupuesto_90%,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.9
+presupuesto_90%,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+relaja_B,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.03
+relaja_B,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.06
+relaja_K,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.67
+relaja_K,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+relaja_D,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.53
+relaja_D,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.04
+presupuesto_100%,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.05
+presupuesto_100%,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+relaja_B,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.9
+relaja_B,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.98
+relaja_K,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.5
+relaja_K,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.04
+relaja_D,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.04
+relaja_D,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+presupuesto_125%,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.07
+presupuesto_125%,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+relaja_B,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.04
+relaja_B,etapa 2: mín. costo,CBC,Optimal,1,Optimal,1.03
+relaja_K,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.87
+relaja_K,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+relaja_D,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.48
+relaja_D,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+presupuesto_150%,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.93
+presupuesto_150%,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+relaja_B,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,5.35
+relaja_B,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+relaja_K,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,3.47
+relaja_K,etapa 2: mín. costo,CBC,Optimal,1,Optimal,3.57
+relaja_D,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.41
+relaja_D,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.24
+presupuesto_175%,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,5.79
+presupuesto_175%,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+relaja_B,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,2.24
+relaja_B,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+relaja_K,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,2.08
+relaja_K,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.38
+relaja_D,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,4.24
+relaja_D,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.2
+presupuesto_200%,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.2
+presupuesto_200%,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+relaja_B,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.04
+relaja_B,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+relaja_K,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,5.69
+relaja_K,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+relaja_D,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.35
+relaja_D,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+presupuesto_250%,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,8.15
+presupuesto_250%,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+relaja_B,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,4.06
+relaja_B,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+relaja_K,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.63
+relaja_K,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+relaja_D,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,6.24
+relaja_D,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+presupuesto_300%,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,11.94
+presupuesto_300%,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+relaja_B,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.02
+relaja_B,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+relaja_K,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.57
+relaja_K,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+relaja_D,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,38.94
+relaja_D,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.24
+presupuesto_350%,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.02
+presupuesto_350%,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+relaja_B,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.02
+relaja_B,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+relaja_K,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.02
+relaja_K,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+relaja_D,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.02
+relaja_D,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+presupuesto_400%,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.02
+presupuesto_400%,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+relaja_B,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.02
+relaja_B,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+relaja_K,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.02
+relaja_K,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+relaja_D,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.02
+relaja_D,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+dmax_40,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.01
+dmax_40,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.01
+dmax_50,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.11
+dmax_50,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.01
+dmax_60,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.18
+dmax_60,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.01
+dmax_70,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.31
+dmax_70,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.18
+dmax_80,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.28
+dmax_80,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+dmax_85,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.44
+dmax_85,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+dmax_88,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.35
+dmax_88,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+dmax_89,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.59
+dmax_89,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+dmax_90,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.02
+dmax_90,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+dmax_95,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.02
+dmax_95,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.01
+dmax_100,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.02
+dmax_100,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.01
+dmax_120,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.02
+dmax_120,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+dmax_150,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.03
+dmax_150,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+dmax_180,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.03
+dmax_180,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+dmax_210,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.03
+dmax_210,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+dmax_250,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.04
+dmax_250,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+red_1,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.03
+red_1,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+red_2,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.42
+red_2,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.05
+red_3,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.48
+red_3,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.05
+red_4,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.36
+red_4,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.08
+red_5,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.46
+red_5,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.43
+contrafactual_C01,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.74
+contrafactual_C01,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.26
+contrafactual_C02,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.21
+contrafactual_C02,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.55
+contrafactual_C03,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.86
+contrafactual_C03,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.04
+contrafactual_C04,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.73
+contrafactual_C04,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+contrafactual_C05,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.08
+contrafactual_C05,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+contrafactual_C06,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.57
+contrafactual_C06,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.06
+contrafactual_C07,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.23
+contrafactual_C07,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+contrafactual_C08,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.16
+contrafactual_C08,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+contrafactual_C09,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.21
+contrafactual_C09,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+contrafactual_C10,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.68
+contrafactual_C10,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+contrafactual_C11,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.82
+contrafactual_C11,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+contrafactual_C12,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.37
+contrafactual_C12,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+contrafactual_C13,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.77
+contrafactual_C13,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+contrafactual_C14,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.08
+contrafactual_C14,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.04
+contrafactual_C15,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.41
+contrafactual_C15,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.05
+contrafactual_C16,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.47
+contrafactual_C16,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.04
+contrafactual_C17,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.46
+contrafactual_C17,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.04
+Presupuesto −15%,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.42
+Presupuesto −15%,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+Presupuesto −20%,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.72
+Presupuesto −20%,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+Presupuesto −25%,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.24
+Presupuesto −25%,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+Presupuesto −30%,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.05
+Presupuesto −30%,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+rel_B,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.86
+rel_B,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.99
+rel_K,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.57
+rel_K,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+rel_D,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.03
+rel_D,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+rel_B,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,2.33
+rel_B,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.04
+rel_K,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.88
+rel_K,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+rel_D,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.57
+rel_D,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.04
+rel_B,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.06
+rel_B,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.04
+rel_K,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.29
+rel_K,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+rel_D,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.1
+rel_D,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.04
+f = 2 % (cercano a lo observado),etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.52
+f = 2 % (cercano a lo observado),etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.05
+f = 5 %,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.16
+f = 5 %,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.72
+"f = 8,3 % (mínimo ABAG/Hazus)",etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.03
+"f = 8,3 % (mínimo ABAG/Hazus)",etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+"f = 11,6 % (central ABAG/Hazus)",etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.03
+"f = 11,6 % (central ABAG/Hazus)",etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+f = 13 % (extremo ABAG),etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.03
+f = 13 % (extremo ABAG),etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+"Hogar = 3,0 personas",etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.03
+"Hogar = 3,0 personas",etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+Distancia máx. 120 km,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.02
+Distancia máx. 120 km,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+Distancia máx. 150 km,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.03
+Distancia máx. 150 km,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+Distancia máx. 210 km,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.04
+Distancia máx. 210 km,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+Sin economías de escala (φ = 1),etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,2.89
+Sin economías de escala (φ = 1),etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+c_f = 150.000 con B fijo,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.19
+c_f = 150.000 con B fijo,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+c_f = 250.000 con B fijo,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.49
+c_f = 250.000 con B fijo,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+Distancias solo OSRM (sin verificación Google),etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.03
+Distancias solo OSRM (sin verificación Google),etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+Distancias + 48 pares Google de 140–160 km,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.03
+Distancias + 48 pares Google de 140–160 km,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+Con reserva La Tebaida,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.03
+Con reserva La Tebaida,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+Solo intermedios y grandes (B conservado),etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.02
+Solo intermedios y grandes (B conservado),etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.01
+"Solo intermedios y grandes (B conservado), −15 %",etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.26
+"Solo intermedios y grandes (B conservado), −15 %",etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+"Solo intermedios y grandes (B conservado), −30 %",etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.23
+"Solo intermedios y grandes (B conservado), −30 %",etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+Solo intermedios y grandes (B recalculado),etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.26
+Solo intermedios y grandes (B recalculado),etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+"Solo intermedios y grandes (B recalculado), −15 %",etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.19
+"Solo intermedios y grandes (B recalculado), −15 %",etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+"Solo intermedios y grandes (B recalculado), −30 %",etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.29
+"Solo intermedios y grandes (B recalculado), −30 %",etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.01
+Presupuesto solo sobre costos fijos (R4'),etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.04
+Presupuesto solo sobre costos fijos (R4'),etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+"Presupuesto solo sobre costos fijos (R4'), −15 %",etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.07
+"Presupuesto solo sobre costos fijos (R4'), −15 %",etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.04
+"Presupuesto solo sobre costos fijos (R4'), −30 %",etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.04
+"Presupuesto solo sobre costos fijos (R4'), −30 %",etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+"Tarifa de transporte × 1,5",etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.45
+"Tarifa de transporte × 1,5",etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.06
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.02
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,1.04
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.02
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,1.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.11
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,1.18
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,15.03
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.19
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.63
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.04
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.09
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.81
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.8
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.07
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.8
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,1.24
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.02
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,1.43
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,2.41
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.04
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.88
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.8
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.63
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.52
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.92
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.68
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.3
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,3.11
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.02
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,1.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.99
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.04
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.04
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.68
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.52
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.65
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.6
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.26
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.07
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.02
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.07
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,3.31
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.6
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.53
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,2.97
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.04
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.09
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,2.52
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.04
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.3
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,6.11
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.07
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.02
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.07
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.07
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.89
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.99
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.45
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.85
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.67
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.32
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.36
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.07
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.98
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.88
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.75
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.85
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.04
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.28
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.05
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.69
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.04
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.42
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.43
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.05
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.48
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.05
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.22
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.77
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.3
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.72
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.03
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.03
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.03
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.03
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.56
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.05
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.54
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.05
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,3.09
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,2.84
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.39
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.32
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.24
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.23
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,4.99
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,1.1
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,6.1
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,1.13
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.05
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.06
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.05
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.05
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.13
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.13
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.13
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.4
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.9
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.41
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.05
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.98
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.07
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.5
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.08
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.18
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.23
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.58
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,3.06
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,1.04
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,2.4
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.91
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.18
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,3.1
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.06
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.47
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.49
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.05
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,2.11
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.38
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.17
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.43
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.08
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.73
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.65
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.74
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.64
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.53
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.32
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,2.04
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.17
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.04
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.07
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.06
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.06
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.04
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.07
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.53
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.32
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.48
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.88
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.17
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.99
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.09
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.96
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.13
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.7
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,2.36
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.3
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,2.17
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.07
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.47
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.48
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.12
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.93
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.74
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.06
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.87
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.78
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.11
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.03
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.37
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.2
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.79
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.14
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.17
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.08
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.1
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.08
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.03
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.35
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.63
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.12
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.06
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.24
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.91
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.22
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.8
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.0
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.3
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.36
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.41
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.08
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.27
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.84
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.02
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.06
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.83
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,1.09
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+cf,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.8
+cf,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+alpha_max,máx. α,HiGHS,Optimal,1,Optimal,5.0
+factibilidad_alpha_max,factibilidad de pisos,HiGHS,Optimal,1,Optimal,1.35
+prueba_infactible_alpha_siguiente_decima,factibilidad de pisos,HiGHS,Infeasible,-1,Infeasible,1.43
+equidad_0.0000,etapa 1: máx. atendidos,HiGHS,Optimal,1,Optimal,1.12
+equidad_0.0000,etapa 2: mín. costo,HiGHS,Optimal,1,Optimal,0.22
+equidad_0.0500,etapa 1: máx. atendidos,HiGHS,Optimal,1,Optimal,0.44
+equidad_0.0500,etapa 2: mín. costo,HiGHS,Optimal,1,Optimal,0.34
+equidad_0.1000,etapa 1: máx. atendidos,HiGHS,Optimal,1,Optimal,0.41
+equidad_0.1000,etapa 2: mín. costo,HiGHS,Optimal,1,Optimal,1.74
+equidad_0.1500,etapa 1: máx. atendidos,HiGHS,Optimal,1,Optimal,0.83
+equidad_0.1500,etapa 2: mín. costo,HiGHS,Optimal,1,Optimal,1.95
+equidad_0.2000,etapa 1: máx. atendidos,HiGHS,Optimal,1,Optimal,0.62
+equidad_0.2000,etapa 2: mín. costo,HiGHS,Optimal,1,Optimal,2.86
+equidad_0.2500,etapa 1: máx. atendidos,HiGHS,Optimal,1,Optimal,1.03
+equidad_0.2500,etapa 2: mín. costo,HiGHS,Optimal,1,Optimal,1.95
+equidad_0.2905,etapa 1: máx. atendidos,HiGHS,Optimal,1,Optimal,1.35
+equidad_0.2905,etapa 2: mín. costo,HiGHS,Optimal,1,Optimal,2.02
+beta_max,máx. β,HiGHS,Optimal,1,Optimal,8.55
+beta_0.0000,etapa 1: máx. atendidos,CBC,Optimal,1,Optimal,0.04
+beta_0.0000,etapa 2: mín. costo,CBC,Optimal,1,Optimal,0.03
+alpha_max,máx. α,HiGHS,Optimal,1,Optimal,5.16
+beta_0.0250,etapa 1: máx. atendidos,HiGHS,Optimal,1,Optimal,0.32
+beta_0.0250,etapa 2: mín. costo,HiGHS,Optimal,1,Optimal,0.37
+alpha_max,máx. α,HiGHS,Optimal,1,Optimal,2.45
+beta_0.0500,etapa 1: máx. atendidos,HiGHS,Optimal,1,Optimal,0.51
+beta_0.0500,etapa 2: mín. costo,HiGHS,Optimal,1,Optimal,1.3
+alpha_max,máx. α,HiGHS,Optimal,1,Optimal,9.89
+beta_0.0750,etapa 1: máx. atendidos,HiGHS,Optimal,1,Optimal,0.83
+beta_0.0750,etapa 2: mín. costo,HiGHS,Optimal,1,Optimal,1.52
+alpha_max,máx. α,HiGHS,Optimal,1,Optimal,3.38
+beta_0.1000,etapa 1: máx. atendidos,HiGHS,Optimal,1,Optimal,1.8
+beta_0.1000,etapa 2: mín. costo,HiGHS,Optimal,1,Optimal,3.29
+alpha_max,máx. α,HiGHS,Optimal,1,Optimal,12.84
+beta_0.1500,etapa 1: máx. atendidos,HiGHS,Optimal,1,Optimal,1.01
+beta_0.1500,etapa 2: mín. costo,HiGHS,Optimal,1,Optimal,2.73
+alpha_max,máx. α,HiGHS,Optimal,1,Optimal,7.22
+beta_0.2000,etapa 1: máx. atendidos,HiGHS,Optimal,1,Optimal,3.17
+beta_0.2000,etapa 2: mín. costo,HiGHS,Optimal,1,Optimal,5.91
+alpha_max,máx. α,HiGHS,Optimal,1,Optimal,4.91
+beta_0.2500,etapa 1: máx. atendidos,HiGHS,Optimal,1,Optimal,6.91
+beta_0.2500,etapa 2: mín. costo,HiGHS,Optimal,1,Optimal,2.43
+alpha_max,máx. α,HiGHS,Optimal,1,Optimal,4.93
+beta_0.2706,etapa 1: máx. atendidos,HiGHS,Optimal,1,Optimal,4.02
+beta_0.2706,etapa 2: mín. costo,HiGHS,Optimal,1,Optimal,5.06
+alpha_max,máx. α,HiGHS,Optimal,1,Optimal,5.06
+alpha_max,máx. α,HiGHS,Optimal,1,Optimal,4.8
+eq_Base,etapa 1: máx. atendidos,HiGHS,Optimal,1,Optimal,1.5
+eq_Base,etapa 2: mín. costo,HiGHS,Optimal,1,Optimal,2.2
+beta_max,máx. β,HiGHS,Optimal,1,Optimal,8.82
+alpha_max,máx. α,HiGHS,Optimal,1,Optimal,7.69
+eq_Presupuesto −15%,etapa 1: máx. atendidos,HiGHS,Optimal,1,Optimal,6.62
+eq_Presupuesto −15%,etapa 2: mín. costo,HiGHS,Optimal,1,Optimal,4.73
+beta_max,máx. β,HiGHS,Optimal,1,Optimal,13.38
+alpha_max,máx. α,HiGHS,Optimal,1,Optimal,2.81
+eq_Presupuesto −30%,etapa 1: máx. atendidos,HiGHS,Optimal,1,Optimal,3.52
+eq_Presupuesto −30%,etapa 2: mín. costo,HiGHS,Optimal,1,Optimal,3.52
+beta_max,máx. β,HiGHS,Optimal,1,Optimal,24.53
+alpha_max,máx. α,HiGHS,Optimal,1,Optimal,9.65
+beta_rec_sin_limite,etapa 1: máx. atendidos,HiGHS,Optimal,1,Optimal,0.77
+beta_rec_sin_limite,etapa 2: mín. costo,HiGHS,Optimal,1,Optimal,0.6

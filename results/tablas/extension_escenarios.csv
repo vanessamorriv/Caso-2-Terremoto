@@ -1,0 +1,4 @@
+escenario,alpha_max,atendidos_sin_piso,atendidos_con_alpha_max,precio_equidad,cob_min_sin_piso,cob_min_con_piso,mun_sin_atencion_sin_piso,mun_sin_atencion_con_piso,sitios_con_piso,beta_max
+Base,0.2905084745762712,5736,5486,250,0.0,0.2905084745762712,15,10,"Tuluá, Cartago, Yumbo, Chinchiná",0.2705546638130908
+Presupuesto −15%,0.23829787234042582,4500,4500,0,0.0,0.23829787234042554,26,10,"Tuluá, Cartago, Chinchiná",0.23756019261724884
+Presupuesto −30%,0.20214689265536723,4000,3818,182,0.0,0.20214689265536723,28,12,"Tuluá, Cartago",0.18461538461538496

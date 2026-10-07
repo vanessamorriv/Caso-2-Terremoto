@@ -1,0 +1,10 @@
+parametro,valor
+beta_recomendado,0.025
+precio_beta_recomendado,49.0
+presupuesto_sin_pequenos_recalculado_COP,3030000000.0
+cota_fisica_solo_osrm,15500.0
+alpha_max_sin_limite_distancia,0.2905084745762712
+atendidos_beta_rec_sin_limite_distancia,5687.0
+costo_kit_alimentacion_COP,29730.0
+costo_kit_aseo_COP,29730.0
+ajuste_redondeo_kits_COP,540.0

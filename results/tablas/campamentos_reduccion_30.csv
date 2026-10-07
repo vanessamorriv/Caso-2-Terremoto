@@ -1,0 +1,18 @@
+id,municipio,departamento,categoria,abierto,capacidad,asignados,utilizacion,costo_fijo,costo_kits,costo_transporte,municipios_atendidos,dist_media_km
+C01,Palmira,Valle del Cauca,Grande,1,3000,3000,1.0,1530000000.0,180000000.0,51600000.0,1,34.4
+C02,Tuluá,Valle del Cauca,Grande,0,3000,0,,0.0,0.0,0.0,0,
+C03,Jamundí,Valle del Cauca,Intermedia,0,1000,0,,0.0,0.0,0.0,0,
+C04,Cartago,Valle del Cauca,Intermedia,0,1000,0,,0.0,0.0,0.0,0,
+C05,Guadalajara de Buga,Valle del Cauca,Intermedia,0,1000,0,,0.0,0.0,0.0,0,
+C06,Candelaria,Valle del Cauca,Intermedia,0,1000,0,,0.0,0.0,0.0,0,
+C07,Yumbo,Valle del Cauca,Intermedia,1,1000,1000,1.0,600000000.0,60000000.0,8867000.0,1,17.734
+C08,Florida,Valle del Cauca,Pequeña,0,500,0,,0.0,0.0,0.0,0,
+C09,El Cerrito,Valle del Cauca,Pequeña,0,500,0,,0.0,0.0,0.0,0,
+C10,Pradera,Valle del Cauca,Pequeña,0,500,0,,0.0,0.0,0.0,0,
+C11,Guacarí,Valle del Cauca,Pequeña,0,500,0,,0.0,0.0,0.0,0,
+C12,Ginebra,Valle del Cauca,Pequeña,0,500,0,,0.0,0.0,0.0,0,
+C13,Chinchiná,Caldas,Pequeña,0,500,0,,0.0,0.0,0.0,0,
+C14,Supía,Caldas,Pequeña,0,500,0,,0.0,0.0,0.0,0,
+C15,Aguadas,Caldas,Pequeña,0,500,0,,0.0,0.0,0.0,0,
+C16,Pensilvania,Caldas,Pequeña,0,500,0,,0.0,0.0,0.0,0,
+C17,La Dorada,Caldas,Pequeña,0,500,0,,0.0,0.0,0.0,0,

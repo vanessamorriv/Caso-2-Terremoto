@@ -1,0 +1,31 @@
+escenario,Palmira,Tuluá,Yumbo,Chinchiná,Cartago,Jamundí,Candelaria,Guadalajara de Buga,Florida,Pradera
+Base,1,1,0,0,0,0,0,0,0,0
+Presupuesto −15%,1,0,1,1,0,0,0,0,0,0
+Presupuesto −20%,1,0,1,1,0,0,0,0,0,0
+Presupuesto −25%,1,0,1,0,0,0,0,0,0,0
+Presupuesto −30%,1,0,1,0,0,0,0,0,0,0
+f = 2 % (cercano a lo observado),0,1,0,0,1,0,0,0,0,0
+f = 5 %,1,0,0,1,1,0,0,1,0,0
+"f = 8,3 % (mínimo ABAG/Hazus)",1,1,0,0,0,0,0,0,0,0
+"f = 11,6 % (central ABAG/Hazus)",1,1,0,0,0,0,0,0,0,0
+f = 13 % (extremo ABAG),1,1,0,0,0,0,0,0,0,0
+"Hogar = 3,0 personas",1,1,0,0,0,0,0,0,0,0
+Distancia máx. 120 km,1,1,0,0,0,0,0,0,0,0
+Distancia máx. 150 km,1,1,0,0,0,0,0,0,0,0
+Distancia máx. 210 km,1,1,0,0,0,0,0,0,0,0
+Sin economías de escala (φ = 1),0,0,1,1,1,1,1,0,1,1
+c_f = 150.000 con B fijo,1,1,1,0,0,0,0,0,0,0
+c_f = 250.000 con B fijo,1,0,1,1,0,0,0,0,0,0
+Distancias solo OSRM (sin verificación Google),1,1,0,0,0,0,0,0,0,0
+Distancias + 48 pares Google de 140–160 km,1,1,0,0,0,0,0,0,0,0
+Con reserva La Tebaida,1,1,0,0,0,0,0,0,0,0
+Solo intermedios y grandes (B conservado),1,1,0,0,0,0,0,0,0,0
+"Solo intermedios y grandes (B conservado), −15 %",1,0,1,0,0,0,0,0,0,0
+"Solo intermedios y grandes (B conservado), −30 %",1,0,1,0,0,0,0,0,0,0
+Solo intermedios y grandes (B recalculado),1,0,1,0,0,1,0,0,0,0
+"Solo intermedios y grandes (B recalculado), −15 %",1,0,1,0,0,0,0,0,0,0
+"Solo intermedios y grandes (B recalculado), −30 %",1,0,0,0,0,0,0,0,0,0
+Presupuesto solo sobre costos fijos (R4'),1,1,0,1,0,0,0,0,0,0
+"Presupuesto solo sobre costos fijos (R4'), −15 %",1,0,1,0,1,0,0,0,0,0
+"Presupuesto solo sobre costos fijos (R4'), −30 %",1,0,1,1,0,0,0,0,0,0
+"Tarifa de transporte × 1,5",1,0,1,1,1,0,0,0,0,0
