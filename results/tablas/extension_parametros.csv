@@ -1,9 +1,0 @@
-parametro,valor
-alpha_max,0.2905084745762712
-alpha_infactible_comprobado,0.291
-alpha_propuesto,0.2905084745762712
-beta_max,0.2705546638130908
-criterio_perdida_max,0.05
-umbral_distancia_km_red_base,90.0
-cota_fisica_atendidos_180km,16000.0
-cota_atendidos_sin_limite_distancia,16000.0
