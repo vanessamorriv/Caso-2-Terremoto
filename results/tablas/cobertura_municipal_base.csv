@@ -1,0 +1,30 @@
+id,municipio,departamento,demanda,atendidos,no_atendidos,cobertura,campamentos,dist_media_km
+D66001,Pereira,Risaralda,5607,0,5607,0.0,—,
+D76001,Cali,Valle del Cauca,4595,3000,1595,0.6528835690968444,Palmira,34.4
+D76109,Buenaventura,Valle del Cauca,2041,0,2041,0.0,—,
+D63001,Armenia,Quindío,1365,1222,143,0.8952380952380953,Tuluá,89.1
+D66170,Dosquebradas,Risaralda,914,0,914,0.0,—,
+D17001,Manizales,Caldas,722,0,722,0.0,—,
+D66682,Santa Rosa de Cabal,Risaralda,436,0,436,0.0,—,
+D63594,Quimbaya,Quindío,374,0,374,0.0,—,
+D76233,Dagua,Valle del Cauca,352,0,352,0.0,—,
+D63470,Montenegro,Quindío,240,0,240,0.0,—,
+D76622,Roldanillo,Valle del Cauca,230,230,0,1.0,Tuluá,47.291
+D76890,Yotoco,Valle del Cauca,161,161,0,1.0,Tuluá,37.896
+D76828,Trujillo,Valle del Cauca,155,155,0,1.0,Tuluá,23.88
+D76054,Argelia,Valle del Cauca,146,0,146,0.0,—,
+D17873,Villamaría,Caldas,138,0,138,0.0,—,
+D76400,La Unión,Valle del Cauca,134,134,0,1.0,Tuluá,66.08
+D76823,Toro,Valle del Cauca,128,128,0,1.0,Tuluá,74.478
+D76606,Restrepo,Valle del Cauca,126,126,0,1.0,Tuluá,60.32699999999999
+D76895,Zarzal,Valle del Cauca,114,114,0,1.0,Tuluá,41.572
+D76736,Sevilla,Valle del Cauca,112,112,0,1.0,Tuluá,54.454
+D76246,El Cairo,Valle del Cauca,103,0,103,0.0,—,
+D76041,Ansermanuevo,Valle del Cauca,99,0,99,0.0,—,
+D76377,La Cumbre,Valle del Cauca,94,94,0,1.0,Tuluá,88.282
+D66400,La Virginia,Risaralda,93,0,93,0.0,—,
+D76113,Bugalagrande,Valle del Cauca,91,91,0,1.0,Tuluá,17.578
+D76616,Riofrío,Valle del Cauca,89,89,0,1.0,Tuluá,14.312000000000001
+D76122,Caicedonia,Valle del Cauca,80,80,0,1.0,Tuluá,73.398
+D63190,Circasia,Quindío,73,0,73,0.0,—,
+D63130,Calarcá,Quindío,68,0,68,0.0,—,

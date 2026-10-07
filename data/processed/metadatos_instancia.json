@@ -1,0 +1,20 @@
+{
+  "presupuesto_base_COP": 3547500000.0,
+  "reduccion_A": 0.15,
+  "reduccion_B": 0.3,
+  "distancia_max_km": 180.0,
+  "tarifa_COP_km_persona": 500.0,
+  "costo_variable_COP_persona": 60000.0,
+  "costo_kit_alimentacion_COP": 29730,
+  "costo_kit_aseo_COP": 29730,
+  "ajuste_redondeo_kits_COP": 540.0,
+  "nota_costo_variable": "v = 60.000 COP es el redondeo declarado de 29.730 (alimentación) + 29.730 (aseo) = 59.460 COP",
+  "fraccion_base": 0.1,
+  "tasa_albergue_observada_min": 0.004178363909381732,
+  "tasa_albergue_observada_max": 0.043782837127845885,
+  "criterio_ciudad_cercana": "al menos un municipio afectado a <= 180 km por carretera (matriz final)",
+  "fuente_distancias": "Por carretera: Google Maps en 164 pares verificados (1-oct-2026) y OSRM/OpenStreetMap en el resto (30-sep-2026)",
+  "pares_google_maps": 164,
+  "pares_osrm": 358,
+  "fuente_coordenadas": "DIVIPOLA DANE (datos.gov.co gdxc-w37w), 30-sep-2026"
+}

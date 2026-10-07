@@ -1,0 +1,48 @@
+Prueba,Resultado,Detalle,Etapa
+Al menos 20 puntos de demanda,PASS,29,Datos
+Cali y Pereira incluidos,PASS,,Datos
+Al menos 15 candidatos,PASS,17,Datos
+Al menos 15 candidatos útiles (≥1 municipio a ≤180 km),PASS,17,Datos
+Candidatos fuera de los 29 municipios de demanda (afectados),PASS,,Datos
+Capacidades 3.000 / 1.000 / 500 según categoría,PASS,,Datos
+"Demanda, capacidad y costos positivos",PASS,,Datos
+Matriz de distancias completa,PASS,522 pares,Datos
+Cada municipio tiene ≥1 candidato a ≤180 km,PASS,,Datos
+Presupuesto = 50 % del costo fijo de los 10 más grandes,PASS,"$3.547,5 M",Datos
+Solo ciudades intermedias o grandes (literal del enunciado),WARNING,10 candidatos pequeños: decisión del grupo pendiente de confirmar con el profesor,Datos
+T1,PASS,Ningún campamento cerrado recibe población,Post-solución Base
+T2,PASS,Ningún campamento excede su capacidad,Post-solución Base
+T3,PASS,Ninguna asignación supera 180 km,Post-solución Base
+T4,PASS,Se respeta el presupuesto,Post-solución Base
+T5,PASS,Asignados + no atendidos = demanda en cada municipio,Post-solución Base
+T6,PASS,Costo reportado = costo recalculado,Post-solución Base
+T7,PASS,Objetivo etapa 1 = personas atendidas,Post-solución Base
+T8,PASS,Objetivo etapa 2 = costo recalculado,Post-solución Base
+T9,PASS,El solver probó optimalidad en ambas etapas (LpStatus y sol_status),Post-solución Base
+T1,PASS,Ningún campamento cerrado recibe población,Post-solución Presupuesto −15%
+T2,PASS,Ningún campamento excede su capacidad,Post-solución Presupuesto −15%
+T3,PASS,Ninguna asignación supera 180 km,Post-solución Presupuesto −15%
+T4,PASS,Se respeta el presupuesto,Post-solución Presupuesto −15%
+T5,PASS,Asignados + no atendidos = demanda en cada municipio,Post-solución Presupuesto −15%
+T6,PASS,Costo reportado = costo recalculado,Post-solución Presupuesto −15%
+T7,PASS,Objetivo etapa 1 = personas atendidas,Post-solución Presupuesto −15%
+T8,PASS,Objetivo etapa 2 = costo recalculado,Post-solución Presupuesto −15%
+T9,PASS,El solver probó optimalidad en ambas etapas (LpStatus y sol_status),Post-solución Presupuesto −15%
+T1,PASS,Ningún campamento cerrado recibe población,Post-solución Presupuesto −30%
+T2,PASS,Ningún campamento excede su capacidad,Post-solución Presupuesto −30%
+T3,PASS,Ninguna asignación supera 180 km,Post-solución Presupuesto −30%
+T4,PASS,Se respeta el presupuesto,Post-solución Presupuesto −30%
+T5,PASS,Asignados + no atendidos = demanda en cada municipio,Post-solución Presupuesto −30%
+T6,PASS,Costo reportado = costo recalculado,Post-solución Presupuesto −30%
+T7,PASS,Objetivo etapa 1 = personas atendidas,Post-solución Presupuesto −30%
+T8,PASS,Objetivo etapa 2 = costo recalculado,Post-solución Presupuesto −30%
+T9,PASS,El solver probó optimalidad en ambas etapas (LpStatus y sol_status),Post-solución Presupuesto −30%
+T1,PASS,Ningún campamento cerrado recibe población,Post-solución Extensión
+T2,PASS,Ningún campamento excede su capacidad,Post-solución Extensión
+T3,PASS,Ninguna asignación supera 180 km,Post-solución Extensión
+T4,PASS,Se respeta el presupuesto,Post-solución Extensión
+T5,PASS,Asignados + no atendidos = demanda en cada municipio,Post-solución Extensión
+T6,PASS,Costo reportado = costo recalculado,Post-solución Extensión
+T7,PASS,Objetivo etapa 1 = personas atendidas,Post-solución Extensión
+T8,PASS,Objetivo etapa 2 = costo recalculado,Post-solución Extensión
+T9,PASS,El solver probó optimalidad en ambas etapas (LpStatus y sol_status),Post-solución Extensión

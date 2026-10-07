@@ -1,0 +1,4 @@
+escenario,atendidos,delta_presupuesto_mas_10,delta_capacidad_mas_10,delta_sin_limite_distancia,holgura_presupuestal,sitios_llenos,sitios_con_holgura
+Base,5736,267,314,0,24669.0,Palmira,Tuluá (91 %)
+Presupuesto −15%,4500,500,450,0,205869320.0,"Palmira, Yumbo, Chinchiná",—
+Presupuesto −30%,4000,0,400,0,52783000.0,"Palmira, Yumbo",—

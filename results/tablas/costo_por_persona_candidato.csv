@@ -1,0 +1,18 @@
+index,municipio,categoria,capacidad,costo_fijo_por_plaza,dist_min_km,municipio_mas_cercano,demanda_a_180km,costo_persona_lleno,abierto_base
+C01,Palmira,Grande,3000,510000.0,34.4,Cali,10347,587200.0,1
+C02,Tuluá,Grande,3000,510000.0,14.312,Riofrío,18880,577156.0,1
+C03,Jamundí,Intermedia,1000,600000.0,19.6,Cali,8294,669800.0,0
+C04,Cartago,Intermedia,1000,600000.0,11.474,Ansermanuevo,11798,665737.0,0
+C05,Guadalajara de Buga,Intermedia,1000,600000.0,12.804,Yotoco,17917,666402.0,0
+C06,Candelaria,Intermedia,1000,600000.0,27.699,Cali,10107,673849.5,0
+C07,Yumbo,Intermedia,1000,600000.0,17.734,Cali,10175,668867.0,0
+C08,Florida,Pequeña,500,690000.0,41.817,Cali,8502,770908.5,0
+C09,El Cerrito,Pequeña,500,690000.0,36.412,Yotoco,17481,768206.0,0
+C10,Pradera,Pequeña,500,690000.0,41.372,Cali,10107,770686.0,0
+C11,Guacarí,Pequeña,500,690000.0,27.387,Yotoco,17917,763693.5,0
+C12,Ginebra,Pequeña,500,690000.0,39.1,Yotoco,17335,769550.0,0
+C13,Chinchiná,Pequeña,500,690000.0,14.7,Santa Rosa de Cabal,11511,757350.0,0
+C14,Supía,Pequeña,500,690000.0,81.988,Manizales,11064,790994.0,0
+C15,Aguadas,Pequeña,500,690000.0,122.567,Manizales,7910,811283.5,0
+C16,Pensilvania,Pequeña,500,690000.0,134.0,Villamaría,1296,817000.0,0
+C17,La Dorada,Pequeña,500,690000.0,165.0,Villamaría,860,832500.0,0

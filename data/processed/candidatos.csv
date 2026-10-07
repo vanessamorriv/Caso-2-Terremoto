@@ -1,0 +1,19 @@
+id,divipola,municipio,departamento,rol,pob_DANE_2026,NH_RUD,personas_RUD,pct_registrado,categoria,capacidad_K,factor_escala,costo_fijo_por_plaza_T,costo_fijo_fj,costo_variable_vj,filtros_S2_S7,lat,lon
+C01,76520,Palmira,Valle del Cauca,Candidato,382703,74,2411,0.63,Grande,3000,0.85,510000,1530000000,60000,Cumple,3.531544,-76.298846
+C02,76834,Tuluá,Valle del Cauca,Candidato,225868,66,2582,1.14,Grande,3000,0.85,510000,1530000000,60000,Cumple,4.085399,-76.197731
+C03,76364,Jamundí,Valle del Cauca,Candidato,196875,161,4396,2.23,Intermedia,1000,1.0,600000,600000000,60000,Cumple,3.258751,-76.538472
+C04,76147,Cartago,Valle del Cauca,Candidato,144206,207,2490,1.73,Intermedia,1000,1.0,600000,600000000,60000,Cumple,4.742192,-75.924374
+C05,76111,Guadalajara de Buga,Valle del Cauca,Candidato,132250,80,1554,1.18,Intermedia,1000,1.0,600000,600000000,60000,Cumple,3.900736,-76.298979
+C06,76130,Candelaria,Valle del Cauca,Candidato,115933,22,573,0.49,Intermedia,1000,1.0,600000,600000000,60000,Cumple,3.408354,-76.346519
+C07,76892,Yumbo,Valle del Cauca,Candidato,115667,158,2388,2.06,Intermedia,1000,1.0,600000,600000000,60000,Cumple,3.540097,-76.499893
+C08,76275,Florida,Valle del Cauca,Candidato,57017,19,986,1.73,Pequeña,500,1.15,690000,345000000,60000,Cumple,3.324118,-76.234199
+C09,76248,El Cerrito,Valle del Cauca,Candidato,56397,21,537,0.95,Pequeña,500,1.15,690000,345000000,60000,Cumple,3.684229,-76.311972
+C10,76563,Pradera,Valle del Cauca,Candidato,50067,16,742,1.48,Pequeña,500,1.15,690000,345000000,60000,Cumple,3.419793,-76.241799
+C11,76318,Guacarí,Valle del Cauca,Candidato,34739,47,373,1.07,Pequeña,500,1.15,690000,345000000,60000,Cumple,3.761815,-76.330911
+C12,76306,Ginebra,Valle del Cauca,Candidato,24545,14,740,3.01,Pequeña,500,1.15,690000,345000000,60000,Cumple,3.724181,-76.268068
+C13,17174,Chinchiná,Caldas,Candidato,50452,229,1619,3.21,Pequeña,500,1.15,690000,345000000,60000,Cumple,4.985227,-75.607529
+C14,17777,Supía,Caldas,Candidato,31774,15,906,2.85,Pequeña,500,1.15,690000,345000000,60000,Cumple,5.446843,-75.64966
+C15,17013,Aguadas,Caldas,Candidato,22301,29,1017,4.56,Pequeña,500,1.15,690000,345000000,60000,Cumple,5.610244,-75.45487
+C16,17541,Pensilvania,Caldas,Candidato,20404,17,689,3.38,Pequeña,500,1.15,690000,345000000,60000,Cumple,5.383281,-75.160299
+C17,17380,La Dorada,Caldas,Candidato,71480,3,147,0.21,Pequeña,500,1.15,690000,345000000,60000,Cumple,5.460834,-74.668819
+R01,63401,La Tebaida,Quindío,Reserva,33758,95,2773,8.21,Pequeña,500,1.15,690000,345000000,60000,No cumple,4.453755,-75.786887

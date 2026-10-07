@@ -1,0 +1,77 @@
+# Bibliografía y fuentes de datos
+
+Generado por `notebooks/01_datos_coordenadas_distancias.ipynb` (misma tabla que la hoja `Fuentes` de
+`data/processed/base_datos_caso2.xlsx`). Estado de verificación al 5-oct-2026: una fuente que no se pudo abrir se marca **No verificada**
+y no se le atribuye ninguna cifra que no venga del libro original del grupo.
+
+**[F01]** UNGRD — Registro Único de Damnificados (RUD) del terremoto del 10-ago-2026, consolidado por municipio, corte 17-sep-2026, consultado a través del agregador secundario datosdelterremoto.org. https://datosdelterremoto.org  
+*Tipo:* Dato oficial vía agregador secundario. *Uso:* NH, familias y personas registradas (demanda d_i y filtros S1, S2, S7).  
+*Verificación:* No verificada en esta revisión: el acceso al sitio no se pudo confirmar el 5-oct-2026; los valores vienen del libro original del grupo.
+
+**[F02]** DANE (2025). Proyecciones de población municipal por área 2018-2042 (PPED), actualizado el 30-jul-2025 (archivo PPED-AreaMun-2018-2042_VP.xlsx en data/raw/dane). https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/proyecciones-de-poblacion  
+*Tipo:* Dato oficial. *Uso:* Población 2026 de los 47 municipios (47/47 coinciden con el archivo) y categoría de los candidatos.  
+*Verificación:* Verificada (5-oct-2026): la página del DANE publica la serie municipal por área 2018-2042 (publicación 8-ago-2025); el archivo dice 'Actualizado el 30 de julio de 2025'.
+
+**[F03]** DANE. Proyecciones municipales de población 2020-2035, actualización post-COVID-19 (DCD) (archivo DCD-area-proypoblacion-Mun-2020-2035-ActPostCOVID-19.xlsx en data/raw/dane). https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/proyecciones-de-poblacion  
+*Tipo:* Dato oficial. *Uso:* Solo control: sensibilidad de la categoría de los candidatos a la fuente de población.  
+*Verificación:* Parcial: el archivo está en data/raw/dane, pero en la página consultada el 5-oct-2026 no se identificó un enlace con ese nombre.
+
+**[F04]** DANE. DIVIPOLA — Códigos de municipios geolocalizados (corte 30-dic-2024), portal datos.gov.co, recurso gdxc-w37w (consulta 30-sep-2026). https://www.datos.gov.co/Mapas-Nacionales/DIVIPOLA-C-digos-municipios-geolocalizados/gdxc-w37w  
+*Tipo:* Dato oficial. *Uso:* Coordenadas de la cabecera de los 47 municipios.  
+*Verificación:* Verificada (5-oct-2026): metadatos del recurso (atribución DANE, corte 30-dic-2024); respuesta original en data/raw.
+
+**[F05]** OpenStreetMap + Project OSRM, servicio table v1, perfil driving (consulta 30-sep-2026). https://router.project-osrm.org/table/v1/driving/  
+*Tipo:* Servicio de ruteo (datos abiertos). *Uso:* Distancias por carretera de los pares no verificados en Google Maps.  
+*Verificación:* Verificada: 58 respuestas originales guardadas con su URL en data/raw/osrm; 5 llamadas re-consultadas coincidieron.
+
+**[F06]** El Tiempo, blog 'Venga le cuento' (14-ago-2026). Kits de ayuda a damnificados por el terremoto desde $14.650. https://blogs.eltiempo.com/venga-le-cuento/2026/08/14/kits-de-ayuda-a-damnificados-por-el-terremoto-desde-14-650/  
+*Tipo:* Prensa. *Uso:* Costo de un kit de alimentación (29.730) y uno de aseo (29.730); v = 60.000 COP (redondeo).  
+*Verificación:* No verificada: el sitio responde 403 al acceso automatizado (5-oct-2026); título y fecha identificados en el buscador; los precios vienen del libro del grupo. Corroboración parcial en F17.
+
+**[F07]** El Cronista (02-sep-2026). La Ungrd entregará hasta $3,1 millones a familias afectadas por el terremoto. https://www.cronista.com/colombia/actualidad-co/la-ungrd-entregara-hasta-31-millones-a-familias-afectadas-por-el-terremoto-quienes-pueden-cobrarlo/  
+*Tipo:* Prensa. *Uso:* Referencia del costo fijo por plaza c_f (supuesto provisional) y de T = 3 meses.  
+*Verificación:* Verificada (5-oct-2026): 3 meses; $787.907,25 a $1.050.543 por hogar-mes según categoría del municipio.
+
+**[F08]** Universidad de La Sabana. Caso 2. Terremoto en Colombia (enunciado, Prof. Gonzalo Mejía). docs/Caso_2_Terremoto_en_Colombia_enunciado.pdf (archivo local)  
+*Tipo:* Enunciado. *Uso:* Capacidades 3.000/1.000/500, tarifa 500 COP/km·persona, 180 km, regla del presupuesto.  
+*Verificación:* Verificada (archivo del curso).
+
+**[F09]** Google Maps, indicaciones en carro, primera ruta sugerida (consultas 1-oct-2026 y 5-oct-2026). https://www.google.com/maps (URL de cada consulta en data/raw/google_maps y en las hojas Control_distancias y Control_140_160km)  
+*Tipo:* Servicio de ruteo. *Uso:* Distancias de 164 pares de la matriz final (1-oct) y control de 48 pares de 140–160 km (5-oct).  
+*Verificación:* Verificada: cada par tiene su URL; Google muestra km enteros desde 100 km.
+
+**[F10]** Association of Bay Area Governments — ABAG (2017). Bay Area Earthquake Shelter Needs (white paper; estimaciones con la metodología Hazus de FEMA). https://files.mtc.ca.gov/library/pub/ABAG/30232.pdf  
+*Tipo:* Informe técnico. *Uso:* Sustenta f = 10 % como escenario de planeación y la sensibilidad 8,3 / 11,6 / 13 %.  
+*Verificación:* Verificada (5-oct-2026): 11,6 % de los desplazados busca refugio en el escenario Hayward; 8,3 % (Napa) a 13,2 % (Solano) por condado; demografía de EE. UU..
+
+**[F11]** OPS/OMS (10-ago-2026). Informe de situación 2: Colombia — Terremoto agosto 2026. https://www.paho.org/es/documentos/informe-situacion-2-colombia-terremoto-agosto-2026-10-agosto-2026  
+*Tipo:* Informe de situación. *Uso:* Contexto del evento.  
+*Verificación:* Verificada (5-oct-2026): magnitud 7,4; profundidad 103 km; sentido en 16 departamentos y afectaciones en 12.
+
+**[F12]** DNP (2014). CONPES 3819: Política nacional para consolidar el Sistema de Ciudades en Colombia. https://colaboracion.dnp.gov.co/CDT/Conpes/Econ%C3%B3micos/3819.pdf  
+*Tipo:* Documento de política. *Uso:* Umbral de 100.000 habitantes para ciudad intermedia (P12).  
+*Verificación:* NO verificada: el sitio del DNP bloquea el acceso automatizado (5-oct-2026). Se usa F13 como fuente secundaria.
+
+**[F13]** Wikipedia. Aglomeraciones urbanas de Colombia. https://es.wikipedia.org/wiki/Aglomeraciones_urbanas_de_Colombia  
+*Tipo:* Fuente secundaria (enciclopedia). *Uso:* Respaldo secundario del umbral de 100.000 habitantes del Sistema de Ciudades.  
+*Verificación:* Verificada (5-oct-2026): el Sistema de Ciudades del DNP incluye municipios y aglomeraciones de más de 100.000 habitantes.
+
+**[F14]** El Nuevo Siglo (18-ago-2026). 2.013 personas permanecen en albergues tras terremoto en Colombia. https://www.elnuevosiglo.com.co/nacion/2013-personas-permanecen-en-albergues-tras-terremoto-en-colombia  
+*Tipo:* Prensa. *Uso:* Albergados observados: Pereira 1.300, Manizales 195, Cali 192, Armenia 135.  
+*Verificación:* Verificada (5-oct-2026).
+
+**[F15]** El Blog del Ministro (29-sep-2026). Dosquebradas unifica alojamientos temporales en el Centro Vida Argemiro Cárdenas. https://www.elblogdelministro.com/2026/09/dosquebradas-unifica-alojamientos.html  
+*Tipo:* Prensa (blog). *Uso:* Albergados observados en Dosquebradas: promedio de 400 personas en 48 días; 45 personas el 27-sep.  
+*Verificación:* Verificada (5-oct-2026): se abrió la página (antes solo se tenía el extracto del buscador).
+
+**[F16]** UNGRD (02-sep-2026). UNGRD activa apoyo económico temporal para familias damnificadas por el terremoto. https://portal.gestiondelriesgo.gov.co/Paginas/Noticias/2026/UNGRD-activa-apoyo-economico-temporal-para-familias-damnificadas-por-el-terremoto.aspx  
+*Tipo:* Comunicado oficial. *Uso:* Corrobora F07: montos por hogar-mes por categoría de municipio, 3 meses.  
+*Verificación:* Verificada (5-oct-2026).
+
+**[F17]** Valora Analitik (13-ago-2026). Así puede donar kit de alimentos o aseo con D1 para damnificados del terremoto. https://www.valoraanalitik.com/asi-puede-donar-kit-de-alimentos-o-aseo-con-d1-para-damnificados-del-terremoto/  
+*Tipo:* Prensa. *Uso:* Corroboración del orden de magnitud del costo de los kits (no reemplaza a F06).  
+*Verificación:* Verificada (5-oct-2026): kits de alimentos o aseo de $15.000 y $30.000.
+
+**[F18]** UNGRD (2024). Protocolo de alojamientos temporales (Estrategia Nacional de Respuesta). https://portal.gestiondelriesgo.gov.co/Documents/ENRE/5-Alojamientos-temporales.pdf  
+*Tipo:* Documento técnico oficial. *Uso:* Búsqueda de una referencia pública para c_f: el protocolo no publica costos; sí el estándar de 3,5 m² por persona.  
+*Verificación:* Verificada (5-oct-2026): sin cifras de costo.

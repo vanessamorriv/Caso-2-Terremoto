@@ -1,0 +1,40 @@
+id,area,prueba,nivel_si_no_cumple,resultado,detalle
+D01,Demanda,Columnas clave completas,FAIL,PASS,0 valores vacíos en 8 columnas clave
+D02,Demanda,"≥ 20 municipios, con Cali y Pereira (enunciado)",FAIL,PASS,29 municipios
+D03,Demanda,"DIVIPOLA único, de 5 dígitos y coherente con el departamento",FAIL,PASS,"departamentos: Caldas, Quindío, Risaralda, Valle del Cauca"
+D04,Demanda,Solo Valle del Cauca y Eje Cafetero (enunciado),FAIL,PASS,4 departamentos
+D05,Demanda,Filtro S1: NH ≥ 400 en todos los municipios,FAIL,PASS,NH mínimo 409
+D06,Demanda,d_i = round(NH · h · f) recalculado coincide,FAIL,PASS,demanda base 18.880 personas con f = 10 %
+D07,Demanda,Población 2026 = DANE PPED (demanda y candidatos),FAIL,PASS,47/47 municipios coinciden
+D08,Demanda,"Tamaño de hogar RUD entre 1,5 y 5 personas",WARNING,PASS,"rango 1,51–2,56"
+D09,Demanda,Familias registradas por vivienda no habitable ≤ 8,WARNING,WARNING,"una familia por vivienda puede subestimar la demanda en: Calarcá (15,3), Sevilla (9,5)"
+D10,Demanda,Personas registradas en el RUD ≤ 50 % de la población,WARNING,WARNING,"Argelia 66,8 %, El Cairo 65,1 %"
+D11,Demanda,Calidad del dato RUD = F (RUD + reporte territorial),WARNING,WARNING,"7 municipios con dato parcial (P) o solo RUD (R): Santa Rosa de Cabal, Dagua, Restrepo, Ansermanuevo, La Virginia, Bugalagrande, Caicedonia"
+C01,Candidatos,≥ 15 candidatos (enunciado),FAIL,PASS,17 candidatos + 1 reserva
+C02,Candidatos,Ningún candidato es un municipio de demanda,FAIL,PASS,intersección vacía
+C03,Candidatos,Categoría por población y capacidad 3.000 / 1.000 / 500 (enunciado),FAIL,PASS,17/17 coherentes
+C04,Candidatos,F_j = K_j · c_f · T · φ recalculado coincide,FAIL,PASS,"F = 1.530 M, 600 M, 345 M"
+C05,Candidatos,Filtros S2 (NH < 250) y S7 (< 5 % registrado),FAIL,PASS,NH máximo 229 (Chinchiná); La Tebaida es reserva por S7
+C06,Candidatos,Solo ciudades intermedias o grandes (lectura literal del enunciado),WARNING,WARNING,10 candidatos pequeños: decisión PENDIENTE del profesor
+C07,Candidatos,Población a más de 2 % de los cortes de categoría,WARNING,WARNING,Jamundí (196.875 hab.)
+P01,Parámetros,B = 50 % del costo fijo de los 10 mayores (enunciado),FAIL,PASS,"B = 3.547,5 M COP; −15 % = 3.015,4 M; −30 % = 2.483,2 M"
+P02,Parámetros,v = kit de alimentación + kit de aseo + redondeo,FAIL,PASS,29.730 + 29.730 + 540 = 60.000 COP
+P03,Parámetros,Tarifa 500 COP/km·persona y distancia máxima 180 km (enunciado),FAIL,PASS,coinciden
+P04,Parámetros,Reducciones dentro del rango 15–30 % (enunciado),FAIL,PASS,15 % y 30 %
+P05,Parámetros,El problema no es trivial: demanda > capacidad total,FAIL,PASS,demanda 18.880 > capacidad 16.000
+P06,Parámetros,c_f y φ con fuente pública,WARNING,WARNING,supuestos del grupo sin costo público por plaza (F18); ver sensibilidad de c_f
+G01,Coordenadas,"47 nodos con coordenadas, dentro de la región y sin duplicados",FAIL,PASS,47 nodos
+G02,Distancias,Matriz 29 × 18 completa y positiva,FAIL,PASS,522 pares
+G03,Distancias,Distancia por carretera ≥ línea recta,FAIL,PASS,"razón mínima 1,10"
+G04,Distancias,"Razón carretera / línea recta ≤ 2,3",WARNING,WARNING,"9 pares de montaña con razón > 2,3 (revisados; acceso a Pensilvania)"
+G05,Distancias,Matriz final = Google Maps en pares verificados y OSRM en el resto,FAIL,PASS,164 pares Google Maps + 358 OSRM
+G06,Distancias,Una sola fuente de distancias,WARNING,WARNING,matriz combinada Google Maps/OSRM: aceptación PENDIENTE del profesor (con solo OSRM la red no cambia)
+G07,Distancias,Cada municipio tiene ≥ 1 candidato a ≤ 180 km,FAIL,PASS,mínimo 4 candidatos por municipio; 308 arcos factibles
+G08,Distancias,Criterio de ciudad cercana: cada candidato alcanza ≥ 1 municipio,FAIL,PASS,17/17 candidatos
+G09,Distancias,Cada candidato alcanza ≥ 3 municipios,WARNING,WARNING,La Dorada alcanza 2 (depende de Google Maps)
+G10,Distancias,Ningún par a ≤ 3 km del corte de 180 km,WARNING,WARNING,"16 pares a ≤ 3 km del corte (Google muestra km enteros; OSRM es una ruta estimada): Pereira–Aguadas (178,0 km), Armenia–Pradera (178,0 km), Montenegro–Pradera (180,0 km), Argelia–El Cerrito (180,0 km), Argelia–Ginebra (181,0 km), La Unión–Jamundí (180,0 km), Toro–Florida (180,0 km), El Cairo–Guadalajara de Buga (181,0 km), Ansermanuevo–Palmira (178,0 km), Ansermanuevo–Yumbo (183,0 km), Caicedonia–Florida (178,0 km), Caicedonia–Supía (178,0 km), Circasia–Palmira (178,0 km), Circasia–Yumbo (183,0 km), Calarcá–Candelaria (181,0 km), Calarcá–Yumbo (178,0 km)"
+G11,Distancias,Pares OSRM de 140–160 km verificados no cambian de factibilidad,FAIL,PASS,"48 pares, máximo Google 168 km"
+F01,Fuentes,Tasa de albergue observada recalculada,FAIL,PASS,"0,4–4,4 % de las personas en NH"
+F02,Fuentes,f = 10 % dentro del rango observado,WARNING,WARNING,"f es 2,3–23,9 veces lo observado: escenario de planeación (ABAG)"
+F03,Fuentes,Cada fuente tiene URL y estado de verificación,FAIL,PASS,18 fuentes (F01–F18)
+F04,Fuentes,Todas las fuentes abiertas y verificadas,WARNING,WARNING,"3 no verificadas: F01, F06, F12 (sus cifras vienen del libro del grupo)"

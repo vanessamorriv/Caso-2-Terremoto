@@ -1,0 +1,8 @@
+origen,sitio,km_OSRM,km_final,factible_final,a_3km_del_corte,usado_en_base_o_recortes,soluciones_que_lo_usan
+Armenia,Pradera,182.6,178.0,1,1,0,ninguna
+Caicedonia,Supía,206.1,178.0,1,1,0,ninguna
+El Cairo,Guadalajara de Buga,180.0,181.0,0,1,0,ninguna
+Villamaría,La Dorada,212.9,165.0,1,0,0,ninguna
+Manizales,La Dorada,213.8,166.0,1,0,0,ninguna
+Ansermanuevo,Aguadas,177.8,190.0,0,0,0,ninguna
+La Cumbre,Cartago,176.7,187.0,0,0,0,ninguna
