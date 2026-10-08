@@ -1,16 +1,3 @@
-"""Verificación de reproducibilidad y coherencia del proyecto.
-
-Uso (desde la raíz del repositorio, después de ejecutar los dos notebooks):
-    python tools/verificar_proyecto.py
-
-Comprueba que: (1) existen todos los archivos esperados, no hay paquetes .whl sueltos y la versión de PuLP es compatible; (2) los
-notebooks se ejecutaron sin errores, no usan rutas absolutas y coinciden con notebooks/src; (3) los datos procesados son coherentes
-con los crudos (OSRM + verificación Google Maps, incluidos los 48 pares de 140–160 km), el Excel no tiene errores y trae LEEME,
-Fuentes (con URL y verificación) y Diccionario; (4) una implementación independiente y mínima reproduce el escenario base y las dos
-lecturas alternativas del presupuesto (sin pequeños con B recalculado; R4' solo costos fijos); (5) ninguna resolución se cortó por
-tiempo y la única infactible es la prueba intencional; (6) las cifras que no deben cambiar siguen iguales y las citadas en el README
-coinciden con las tablas; (7) no quedan frases desactualizadas en README, docs, notebooks ni Excel.
-"""
 import json, math, re, sys
 from pathlib import Path
 import pandas as pd
