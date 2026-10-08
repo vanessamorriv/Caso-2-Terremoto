@@ -1,8 +1,3 @@
-"""Convierte un script con marcas de celda ("# %%" código, "# %% [markdown]" texto) en un notebook .ipynb.
-
-Uso:  python tools/py2nb.py notebooks/src/02_modelo_milp.py notebooks/02_modelo_milp.ipynb
-Las celdas markdown se escriben como comentarios que empiezan con "# " y se les quita ese prefijo.
-"""
 import sys
 import nbformat as nbf
 
