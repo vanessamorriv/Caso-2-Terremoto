@@ -1,23 +1,3 @@
-"""Módulo de calidad de datos del Caso 2 (terremoto en Colombia).
-
-Reúne en UNA tabla las pruebas sobre los datos de entrada del modelo (demanda, candidatos, parámetros, coordenadas,
-distancias y fuentes). Cada prueba devuelve:
-
-    PASS     el dato cumple la regla.
-    WARNING  el dato es utilizable, pero tiene una debilidad conocida que debe declararse (no detiene nada).
-    FAIL     el dato rompe un requisito del enunciado o una regla de construcción: el modelo no debe correrse.
-
-Objetivo del proyecto: 0 FAIL. Los WARNING quedan documentados en la hoja `Calidad_datos` del Excel y en
-`results/tablas/calidad_datos.csv`.
-
-Solo lee archivos (data/raw y data/processed); no depende del solver ni de la hora de ejecución, así que el notebook 01
-(que la genera), el notebook 02 (que la exige antes de optimizar) y tools/verificar_proyecto.py (que la recalcula y la
-compara con el CSV) obtienen exactamente la misma tabla.
-
-Uso:
-    from calidad_datos import evaluar, resumen
-    tabla = evaluar(ROOT)        # ROOT = raíz del repositorio
-"""
 import json
 import math
 from pathlib import Path
