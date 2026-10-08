@@ -1,28 +1,4 @@
-# %% [markdown]
-# # Caso 2 · Terremoto en Colombia (10-ago-2026)
-# ## Notebook 01 — Construcción y validación de la instancia: demanda, candidatos, coordenadas y distancias por carretera
-#
-# **Universidad de La Sabana · Diseño y Gestión de la Cadena de Suministro · Prof. Gonzalo Mejía**
-#
-# Este notebook toma los **datos originales del grupo** (`data/raw/`) y produce los **datos procesados** que usa el modelo
-# (`data/processed/`). No cambia ninguna decisión del grupo: recalcula cada valor derivado, lo compara con lo que ya estaba en
-# los CSV y en el Excel, y se detiene si algo no coincide.
-#
-# | Sección | Qué hace |
-# |---|---|
-# | 1. Configuración | Rutas relativas, parámetros de ejecución |
-# | 2. Parámetros | Lee la hoja `Parametros` del Excel del grupo (fuente única de supuestos) |
-# | 3. Demanda | Verifica población DANE, recalcula la demanda $d_i$ para cada fracción $f$ y la contrasta con la tasa de albergue observada |
-# | 4. Candidatos y presupuesto | Recalcula categoría, capacidad, costo fijo y presupuesto |
-# | 5. Coordenadas | Cabeceras municipales DIVIPOLA (DANE, datos.gov.co) |
-# | 6. Distancias por carretera | Matriz OSRM (OpenStreetMap) 29 × 18 + verificación Google Maps de 164 pares → matriz final |
-# | 7. Validación de la matriz | Razón carretera/línea recta, alcance a 180 km y criterio de 'ciudad cercana', OSRM vs. Google Maps, pares cerca del corte, verificación 140–160 km |
-# | 8. Salidas | CSV procesados, base de datos Excel (LEEME, Fuentes, Diccionario…), `docs/bibliografia.md`, `docs/diccionario_datos.md` y figura de nodos |
-#
-# **Cómo ejecutarlo:** desde la carpeta `notebooks/` con *Run All*. No necesita internet: usa las respuestas de DIVIPOLA y OSRM
-# guardadas en `data/raw/`. Para volver a consultar los servicios, cambie `ACTUALIZAR_COORDENADAS` / `ACTUALIZAR_OSRM` a `True`.
 
-# %% [markdown]
 # ## 1. Configuración
 
 # %%
@@ -62,10 +38,7 @@ def redondear(v):
 print("Raíz del proyecto:", ROOT.name, "| carpetas:", ", ".join(sorted(p.name for p in ROOT.iterdir() if p.is_dir() and not p.name.startswith("."))))
 
 # %% [markdown]
-# ## 2. Parámetros del grupo
-# La hoja `Parametros` de `base_datos_caso2_original.xlsx` es la **fuente única** de supuestos. Se leen los valores de entrada
-# (columna C) con su tipo (Real / Supuesto) y fuente.
-
+# ## 2. Parámetros
 # %%
 wb0 = load_workbook(RAW / "base_datos_caso2_original.xlsx")
 ws = wb0["Parametros"]
@@ -83,9 +56,6 @@ RED_A, RED_B = P["P18"], P["P19"]
 F_FRAC = {"d_f02": P["P21"], "d_f05": P["P22"], "d_f10": P["P20"], "d_f13": P["P23"]}
 HOGAR_ALT = P["P24"]
 
-# Costo variable v (P03) separado en sus dos componentes explícitos (enunciado: 1 kit de alimentación + 1 kit de aseo por persona).
-# Precios de la fuente del grupo (F06, El Tiempo 14-ago-2026, precios minoristas D1): 29.730 + 29.730 = 59.460 COP.
-# El modelo usa v = 60.000 COP (P03): es un REDONDEO declarado de 59.460 (+540 COP/persona, +0,9 %), no un precio distinto.
 KIT_ALIMENTACION = 29_730   # COP/persona — kit de alimentación
 KIT_ASEO = 29_730           # COP/persona — kit de aseo
 AJUSTE_REDONDEO_KITS = V_KIT - (KIT_ALIMENTACION + KIT_ASEO)
@@ -96,12 +66,6 @@ md(f"**Costo variable por persona:** kit de alimentación {es(KIT_ALIMENTACION)}
 
 # %% [markdown]
 # ## 3. Demanda: 29 municipios afectados
-# **Construcción (decisión del grupo):** $d_i = \text{round}(NH_i \cdot h_i \cdot f)$, donde $NH_i$ son las viviendas no habitables
-# del RUD, $h_i$ = personas registradas / familias registradas (tamaño de hogar RUD del municipio) y $f$ la fracción que requiere
-# campamento (base 10 %). Se incluyen los municipios con $NH_i \ge 400$ (filtro S1).
-#
-# Primero se verifica la población contra el archivo oficial del DANE (PPED 2018-2042, actualizado el 30-jul-2025).
-
 # %%
 dem = pd.read_csv(RAW / "demanda_terremoto.csv", dtype={"divipola": str})
 cand = pd.read_csv(RAW / "candidatos_costos.csv", dtype={"divipola": str})
@@ -147,12 +111,6 @@ md("**Calidad del dato (señalado para validación):** la razón familias/NH var
 
 # %% [markdown]
 # ### 3.1 Tasa de albergue observada vs. fracción de planeación $f$
-# El grupo usa $f$ = 10 % como **escenario de planeación**: es cercano al 11,6 % que estima ABAG (2017, metodología Hazus) para el
-# escenario Hayward, con rango 8,3–13,2 % por condado (F10). Ese porcentaje es la fracción de **desplazados** que busca refugio
-# público y está calibrado con demografía de EE. UU. Para contrastarlo con lo observado en este sismo se usan las cifras publicadas de
-# personas en albergues (`data/raw/albergados_observados.csv`, fuentes F14 y F15) y se divide entre las personas en viviendas no
-# habitables de cada municipio (`personas_en_NH` de la demanda).
-
 # %%
 alb = pd.read_csv(RAW / "albergados_observados.csv")
 alb = alb.merge(dem[["municipio", "personas_en_NH", "d_f10"]], on="municipio", how="left", validate="one_to_one")
@@ -174,11 +132,6 @@ md(f"**Tasa observada = albergados ÷ personas en viviendas no habitables:** ent
 
 # %% [markdown]
 # ## 4. Candidatos, costos y presupuesto
-# **Reglas del grupo:** categoría por población (Grande ≥ 200.000; Intermedia ≥ 100.000; Pequeña en otro caso), capacidad
-# 3.000 / 1.000 / 500, costo fijo $F_j = K_j \cdot c_f \cdot T \cdot \phi_{cat}$ y costo variable de un kit de alimentación y un kit
-# de aseo por persona. Filtros S2/S7: NH < 250 y % de población registrada < 5 %. La Tebaida es **reserva** (no cumple S7).
-
-# %%
 def categoria(pob):
     return "Grande" if pob >= CORTE_G else ("Intermedia" if pob >= CORTE_I else "Pequeña")
 
@@ -214,16 +167,6 @@ md("**Sensibilidad a la fuente de población:** con la proyección DCD post-COVI
 
 # %% [markdown]
 # ## 5. Coordenadas: cabeceras municipales DIVIPOLA
-# Fuente: DANE — DIVIPOLA, *Códigos de municipios geolocalizados* (datos.gov.co, recurso `gdxc-w37w`). Las coordenadas se
-# consultaron el 30-sep-2026 para los 4 departamentos y se guardaron en `data/raw/divipola_coordenadas_datosgov.csv`
-# (formato original con coma decimal).
-#
-# **Limitación (cabeceras municipales).** Cada municipio se representa con **un solo punto**: el de la cabecera municipal que
-# publica DIVIPOLA. Ese punto no es necesariamente la plaza principal (en Cali queda unos 4 km al sur del centro y en Pereira unos
-# 3 km al suroccidente) y no representa la población rural ni a los damnificados de corregimientos alejados (Buenaventura, Dagua,
-# El Cairo, Argelia tienen gran parte de su territorio lejos de la cabecera). El error es pequeño frente al límite de 180 km, pero
-# en trayectos cortos (< 40 km) puede ser del orden de 5–10 %. Se mantiene porque el enunciado pide un punto por municipio y es la
-# referencia oficial y reproducible.
 
 # %%
 if ACTUALIZAR_COORDENADAS:
@@ -255,25 +198,6 @@ display(nodos.head(6))
 
 # %% [markdown]
 # ## 6. Distancias por carretera (OSRM / OpenStreetMap + verificación en Google Maps)
-# **Método.** Servicio `table` de OSRM (perfil *driving*) sobre la red vial de OpenStreetMap. Origen = cabecera de cada municipio
-# afectado; destino = cabecera de cada sitio. OSRM ajusta cada punto a la vía más cercana y devuelve la distancia en metros de la
-# **ruta más rápida** (no necesariamente la más corta). La consulta se hizo el 30-sep-2026 en 58 llamadas (cada origen contra 9 + 9
-# sitios, con coordenadas codificadas en *polyline* de 5 decimales); las respuestas originales y sus URL están en
-# `data/raw/osrm/osrm_table_respuestas.csv`. Control de transcripción: se re-consultaron 5 llamadas al azar (50 valores) y
-# coincidieron exactamente.
-#
-# Con `ACTUALIZAR_OSRM = True` la matriz se vuelve a consultar en **una sola llamada** (47 coordenadas) y se compara con la guardada.
-#
-# **Verificación con Google Maps (1-oct-2026).** Se consultaron en Google Maps (modo carro, primera ruta sugerida) **164 pares**:
-# los **139 pares cuya distancia OSRM está entre 160 y 230 km** (la franja donde se decide si un par cumple el límite de 180 km),
-# **16 pares de control** (rutas cortas y largas usadas por el modelo y todos los accesos a La Dorada desde Risaralda y Caldas) y
-# **9 rutas de montaña de más de 230 km** hacia La Dorada, Aguadas, Supía y Pensilvania. Los resultados y la URL de cada consulta
-# están en `data/raw/google_maps/verificacion_google_maps.csv`.
-#
-# **Regla de la matriz final:** para los 164 pares verificados se usa el valor de Google Maps (fuente que el enunciado nombra primero y
-# que el profesor puede repetir); para los 358 pares restantes se usa OSRM. La concordancia en los pares verificados (mediana
-# Google/OSRM ≈ 1,005) respalda usar OSRM donde no hubo verificación manual.
-
 # %%
 D_nodes = nodos[nodos.tipo == "demanda"].reset_index(drop=True)
 S_nodes = nodos[nodos.tipo == "candidato"].reset_index(drop=True)
@@ -318,9 +242,6 @@ display(dist_km.rename(index=dict(zip(D_nodes.id, D_nodes.municipio)), columns=d
 
 # %% [markdown]
 # ## 7. Validación de la matriz
-# 1. **Razón carretera / línea recta** (haversine): debe ser ≥ 1; valores > 2,3 se revisan.
-# 2. **Alcance a 180 km:** cada municipio debe tener al menos un candidato a ≤ 180 km y deben existir ≥ 15 candidatos útiles.
-# 3. **OSRM vs. Google Maps** en los 164 pares verificados: diferencias y cambios de factibilidad a 180 km.
 
 # %%
 def haversine(lat1, lon1, lat2, lon2):
@@ -353,9 +274,7 @@ por_sitio = pd.DataFrame({"municipio": S_nodes.municipio.values, "rol": S_nodes.
                           "demandas_a_180km": a.sum(axis=0).values,
                           "demanda_base_a_180km": (a.mul(dem.set_index("D" + dem.divipola).d_f10, axis=0)).sum(axis=0).values,
                           "dist_min_km": dist_km.min(axis=0).round(1).values}, index=S_nodes.id)
-# Criterio explícito de "ciudad cercana" (enunciado: candidatos en ciudades intermedias o grandes "cercanas"):
-# un sitio es cercano si al menos un municipio afectado está a <= 180 km por carretera (matriz final). Se reporta también cuántos
-# de esos pares solo cumplen gracias a un valor de Google Maps (con OSRM estarían por encima de 180 km).
+
 a_osrm = (dist_osrm <= D_MAX).astype(int)
 por_sitio["municipios_a_180km"] = [", ".join(nom[i] for i in dist_km.index if a.loc[i, j]) for j in S_nodes.id]
 por_sitio["pares_que_dependen_de_Google"] = [int(((a[j] == 1) & (a_osrm[j] == 0)).sum()) for j in S_nodes.id]
@@ -405,10 +324,6 @@ md("**La Dorada (C17).** OSRM daba 212,9 km desde Villamaría y 213,8 km desde M
    + ". Calculadoras de ruta independientes reportan 170–172 km para Manizales–La Dorada. **Conclusión:** La Dorada sí alcanza "
    "a Manizales y Villamaría a ≤ 180 km; la marca de 'candidato inútil' venía de un error de ruteo de OSRM.")
 
-# %% [markdown]
-# **Pares que cambian de factibilidad y cercanía al corte.** Google Maps muestra **kilómetros enteros desde 100 km**, de modo que un
-# valor como 178 km puede ser 177,5–178,4 km; además, la ruta "más rápida" cambia con el tráfico. Los pares que quedan a pocos km del
-# corte de 180 km son, por eso, frágiles.
 
 # %%
 cambian = control[control.cambia_factibilidad == 1].assign(distancia_al_corte_km=lambda d_: (d_.km_Google_Maps - D_MAX).abs())
@@ -421,17 +336,6 @@ md(f"**{len(cerca_corte)} de los {len(cambian)} pares que cambian de factibilida
    + ". Su efecto sobre los escenarios oficiales se comprueba en el notebook 02 (sección 9): ninguno de estos arcos se usa en la base, "
    "−15 % ni −30 %, cuyas asignaciones no superan 90 km.")
 
-# %% [markdown]
-# **Verificación adicional (5-oct-2026): pares OSRM entre 140 y 160 km.** Por debajo de 160 km la matriz usa OSRM. Como la razón
-# Google/OSRM llegó a 1,14 en la verificación del 1-oct (Villamaría–El Cerrito, 222,8 → 254 km), un par OSRM de 158–160 km podría,
-# en principio, superar 180 km en Google Maps. Hay **49 pares OSRM en [140, 160) km**; uno (Buenaventura–Palmira) ya estaba
-# verificado como control, así que se consultaron los **48 restantes** con la misma metodología (modo carro, primera ruta sugerida,
-# URL por par). Resultados en `data/raw/google_maps/verificacion_google_maps_140_160km.csv`.
-#
-# **Regla:** estos 48 valores **no reemplazan** a OSRM en la matriz final, porque 12 de ellos reflejan cierres viales temporales del
-# 5-oct-2026 (la ruta sugerida "evita corte de carretera") y la consulta es de otra fecha que la de los 164 pares del 1-oct. Se usan
-# para (1) comprobar que ningún par cambia de factibilidad y (2) construir una matriz alternativa
-# (`distancias_km_alt_google_140_160.csv`) que el notebook 02 usa como sensibilidad.
 
 # %%
 gm2 = pd.read_csv(RAW / "google_maps" / "verificacion_google_maps_140_160km.csv")
@@ -455,8 +359,6 @@ assert ((dist_alt <= D_MAX) == (dist_km <= D_MAX)).all().all()
 
 # %% [markdown]
 # ## 8. Salidas
-# **CSV procesados** (`data/processed/`), **base de datos Excel actualizada** (conserva las fórmulas originales del grupo y agrega
-# coordenadas, distancias, alcance, fuentes y registro de cambios) y **figura de nodos**.
 
 # %%
 D_ids = list(D_nodes.id)
@@ -825,16 +727,3 @@ ax.set_xlabel("Longitud"); ax.set_ylabel("Latitud"); ax.set_aspect("equal")
 ax.set_title("Nodos de la instancia: 29 municipios afectados y 18 sitios (17 + reserva)")
 ax.legend(fontsize=7, loc="lower left"); ax.grid(alpha=0.25)
 plt.tight_layout(); plt.savefig(FIG / "01_nodos_instancia.png", dpi=160); plt.show()
-
-# %% [markdown]
-# ## Limitaciones a declarar
-# - OSRM y Google Maps usan la red vial **sin cierres ni daños posteriores al sismo** y devuelven la distancia de la **ruta más
-#   rápida** sugerida, no necesariamente la más corta. Google Maps redondea a km enteros los trayectos ≥ 100 km.
-# - Cada municipio se representa por su **cabecera** (DIVIPOLA); en municipios extensos (Buenaventura, Dagua, El Cairo, Argelia) la
-#   población damnificada puede estar lejos de ese punto.
-# - La matriz final combina dos fuentes: Google Maps en los 164 pares verificados (todos los de la franja 160–230 km) y OSRM en el resto.
-#   Los 48 pares OSRM de 140–160 km se verificaron el 5-oct-2026 (ninguno cambia de factibilidad) y solo se usan como sensibilidad.
-#   **Decisión adoptada:** matriz combinada (Google Maps donde se decide la factibilidad); con solo OSRM la red base no cambia.
-# - Tres pares que cambian de factibilidad están a ≤ 3 km del corte de 180 km (Armenia–Pradera 178, El Cairo–Buga 181,
-#   Caicedonia–Supía 178) y Google muestra km enteros: su factibilidad es frágil (no afecta a la base ni a los recortes).
-# - El RUD es un registro abierto (corte 17-sep-2026) y proviene de un agregador secundario; la demanda puede estar subestimada.
