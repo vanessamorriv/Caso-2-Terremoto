@@ -1,46 +1,3 @@
-# %% [markdown]
-# # Caso 2 · Terremoto en Colombia (10-ago-2026)
-# ## Notebook 02 — Red temporal de campamentos: modelo MILP en PuLP
-#
-# **Universidad de La Sabana · Diseño y Gestión de la Cadena de Suministro · Prof. Gonzalo Mejía**
-#
-# En este notebook armamos y resolvemos el modelo que decide **qué campamentos abrir** y **cómo repartir** entre ellos a las personas
-# que perdieron su vivienda. Hay tres condiciones: cada campamento tiene una capacidad limitada, el presupuesto tiene un máximo y nadie
-# puede trasladarse más de 180 km por carretera.
-#
-# | Sección | Qué hacemos |
-# |---|---|
-# | 1. Configuración y datos | Cargamos `data/processed/`, que genera el notebook 01 |
-# | 2. Diagnóstico de la instancia | Comparamos demanda, capacidad y presupuesto para ver qué recurso es escaso |
-# | 3. Validación previa | Pruebas automáticas sobre los datos y módulo de calidad de datos (PASS / WARNING / FAIL; la meta es 0 FAIL) |
-# | 4. Formulación matemática | Conjuntos, parámetros, variables, objetivo, restricciones y dominios |
-# | 5. Implementación en PuLP | Modelo indexado con estructuras de datos y ciclos |
-# | 6. Escenario base | Apertura, asignación, utilización, cobertura, costos, distancias y umbrales |
-# | 7. ¿Por qué esta red? ¿Es trivial? | Costo por plaza, presupuesto hasta ×4, restricciones activas, umbral de distancia, redes casi óptimas y contrafactual |
-# | 8. Escenarios de presupuesto | −15 % y −30 % (elegidos por el grupo), más −20 % y −25 % para completar la curva |
-# | 9. Sensibilidad | Lecturas alternativas de las decisiones adoptadas (sin pequeños con $B$ conservado o recalculado; R4' solo costos fijos), fracción $f$, tamaño de hogar, costo fijo $c_f$ (con $B$ que escala y con $B$ fijo), economías de escala, fuente de distancias (incluye 48 pares de 140–160 km), reserva y tarifa |
-# | 10. Extensión propia | Equidad territorial: piso municipal $\beta$ (familia E3, **variante recomendada**) y piso departamental $\alpha$ (nueva variable + familia E1, como complemento) |
-# | 11. Auditoría y exportación | Registro del solver, uso de los arcos frágiles (cambian de factibilidad con Google Maps), tablas CSV, `resultados_modelo.xlsx` y figuras |
-# | 12. Conclusiones | Qué muestran los resultados, limitaciones y decisiones metodológicas adoptadas |
-#
-# Para leer los resultados usamos dos etiquetas: **Resultado matemático** es lo que entrega el modelo e **Interpretación** es lo que eso
-# significa para la atención humanitaria.
-
-# %% [markdown]
-# ## 1. Configuración y datos
-#
-# **Instalación.** La primera celda revisa si están instalados `pulp>=2.8,<4` y `highspy`, y **solo los instala si faltan**. También
-# reinstala PuLP si encuentra la versión 4, porque esa versión cambia la API: en PuLP 4.0.0 no existen `PULP_CBC_CMD`, `LpStatus`,
-# `LpStatusOptimal` ni `LpSolutionOptimal`, y `LpVariable` no acepta `cat=` ni tiene `.dicts`. Lo probamos con **Python 3.13, PuLP 3.3.2
-# (trae CBC incluido) y highspy 1.15.1 (HiGHS)**; también funciona con cualquier PuLP ≥ 2.8, que es la primera versión con `pulp.HiGHS`.
-#
-# **Modo rápido.** Con `RAPIDO = True` el notebook se salta las cuadrículas largas (la curva completa de presupuesto con sus pruebas de
-# relajación, las 72 × 2 combinaciones de $c_f$, el barrido completo de distancia y la enumeración de 5 redes) y guarda todo en
-# `results/rapido/`, sin tocar los resultados oficiales. Sirve para revisar el código en pocos minutos. **Las cifras oficiales siempre
-# salen con `RAPIDO = False`** (≈ 11 min).
-
-# %%
-# Instala lo que falte (requiere internet). Si había un PuLP ≥ 4 ya importado, reinicie el kernel después de esta celda.
 import importlib.metadata as _md, importlib.util as _iu, subprocess as _sp, sys as _sys
 def _version(paquete):
     try:
@@ -128,8 +85,6 @@ md(f"**Instancia:** {len(dem)} municipios afectados · {(cand.rol=='Candidato').
 
 # %% [markdown]
 # ## 2. Diagnóstico de la instancia: ¿qué recurso es escaso?
-# Antes de optimizar queremos saber qué tan lejos estamos de poder atender a todos y qué se acaba primero: la capacidad o el dinero.
-
 # %%
 base_c = cand[cand.rol == "Candidato"]
 costo_plaza = (base_c.costo_fijo_fj / base_c.capacidad_K).groupby(base_c.categoria).first()
@@ -154,8 +109,6 @@ md(f"**Lectura:** aun usando solo las plazas más baratas, el presupuesto alcanz
 
 # %% [markdown]
 # ## 3. Validación previa de los datos
-# Revisamos los datos antes de construir el modelo. Si falla una prueba crítica (FAIL), el notebook se detiene; un WARNING no lo detiene,
-# solo señala una debilidad que ya está declarada.
 
 # %%
 A_base = [(i, j) for i in dem.index for j in base_c.index if dist.loc[i, j] <= D_MAX]
@@ -181,8 +134,6 @@ display(val.style.map(colorear, subset=["Resultado"]).hide(axis="index"))
 if (val.Resultado == "FAIL").any():
     raise RuntimeError("Hay errores críticos en los datos.")
 
-# Módulo de calidad de datos (tools/calidad_datos.py): se recalcula sobre data/processed y debe coincidir con la tabla que
-# generó el notebook 01 (results/tablas/calidad_datos.csv). Con algún FAIL el modelo no se corre.
 import sys
 sys.path.insert(0, str(ROOT / "tools"))
 from calidad_datos import evaluar as evaluar_calidad, resumen as resumen_calidad
@@ -269,11 +220,7 @@ I = dem.index.tolist()
 J_BASE = cand.index[cand.rol == "Candidato"].tolist()
 J_RESERVA = cand.index[cand.rol == "Reserva"].tolist()
 DEPTOS = sorted(set(DEP.values()))
-# Solvers (ambos a través de PuLP):
-# - CBC (incluido en PuLP) para el modelo base, los escenarios y las sensibilidades: resuelve cada caso en < 1 s (hasta ~1 min en los
-#   niveles de presupuesto ×2,5–×3,5).
-# - HiGHS (paquete highspy) para los modelos con pisos de equidad de la extensión (α, β): CBC no logra certificar el problema max-min
-#   α* en 10 min, mientras HiGHS lo certifica en segundos. Si highspy no está instalado se usa CBC y, si no certifica, el notebook se detiene.
+
 SOLVER_CBC = pulp.PULP_CBC_CMD(msg=False, timeLimit=LIMITE_TIEMPO, gapRel=0, threads=HILOS)
 SOLVER_EQ = (pulp.HiGHS(msg=False, timeLimit=LIMITE_TIEMPO, gapRel=0, threads=HILOS)
              if "HiGHS" in pulp.listSolvers(onlyAvailable=True) else SOLVER_CBC)
@@ -638,17 +585,7 @@ plt.savefig(FIG / "04_cobertura_base.png", dpi=160); plt.show()
 
 # %% [markdown]
 # ### 6.4 Costos y distancias
-# **Umbrales de distancia definidos por el grupo.** El enunciado pide reportar qué porcentaje de la población atendida queda dentro de
-# umbrales que defina el grupo. Usamos estos:
-#
-# | Umbral | Justificación |
-# |---|---|
-# | 50 km | Traslado corto dentro del área metropolitana o hacia un municipio vecino (≈ 1 h por carretera); la familia puede ir y volver a su vivienda o a su trabajo en el mismo día. |
-# | 100 km | Traslado normal dentro del mismo departamento (≈ 2 h); todavía se pueden mantener los vínculos con el municipio de origen. |
-# | 150 km | Traslado entre departamentos o por montaña (≈ 3 h); es el último umbral antes del límite y muestra cuánta gente queda cerca de él. |
-# | 180 km | Es la distancia máxima del enunciado (R5). Por construcción el 100 % de los atendidos queda dentro, así que sirve de control. |
 
-# %%
 fig, axs = plt.subplots(1, 2, figsize=(11, 3.8))
 comp = {"Costo fijo": K_BASE["Costo fijo"], "Transporte": K_BASE["Costo transporte"],
         "Kits alimentación": K_BASE["Costo kits alimentación"], "Kits aseo": K_BASE["Costo kits aseo"],
@@ -709,9 +646,6 @@ más larga es de {es(K_BASE["Distancia máxima recorrida (km)"], 1)} km; ver umb
 # %% [markdown]
 # ## 7. ¿Por qué esta red?
 # ### 7.1 Costo de atender una persona en cada candidato
-# Calculamos cuánto cuesta alojar a una persona en cada sitio $j$ si el campamento se llena: costo fijo por plaza + kits + transporte
-# desde el municipio afectado más cercano. Con esta tabla se entiende por qué el modelo prefiere los campamentos grandes.
-
 # %%
 cpp = pd.DataFrame({"municipio": base_c.municipio, "categoria": base_c.categoria, "capacidad": base_c.capacidad_K,
                     "costo_fijo_por_plaza": base_c.costo_fijo_fj / base_c.capacidad_K,
@@ -796,9 +730,6 @@ md(f"""**Lectura.**
 
 # %% [markdown]
 # ### 7.3 ¿Desde qué distancia máxima cambia la red base?
-# Resolvemos el escenario base con límites de distancia entre 40 y 250 km. Así vemos si el límite de 180 km del enunciado influye en la
-# decisión y desde qué **umbral** deja de influir.
-
 # %%
 DMAX_SWEEP = [40, 50, 60, 70, 80, 85, 88, 89, 90, 95, 100, 120, 150, 180, 210, 250]
 if RAPIDO:
@@ -824,9 +755,6 @@ md(f"**Lectura.** La red base aparece desde un límite de **{es(UMBRAL_D)} km** 
 
 # %% [markdown]
 # ### 7.4 Redes casi óptimas
-# Para comprobar que la solución no es arbitraria ni trivial, buscamos las **5 mejores redes distintas**. Después de cada solución
-# agregamos un corte *no-good* $\sum_{j\in S}(1-y_j)+\sum_{j\notin S}y_j\ge 1$, que prohíbe repetir el conjunto $S$ de sitios abiertos,
-# y volvemos a resolver el modelo lexicográfico.
 
 # %%
 REDES, vistas = [], []
@@ -852,9 +780,6 @@ md(f"**Lectura.** La red óptima es única: atiende a {es(K_BASE['Población ate
 
 # %% [markdown]
 # ### 7.5 Análisis contrafactual
-# Para cada candidato **volvemos a optimizar la red obligándolo a tomar la decisión contraria** (cerrar el que estaba abierto o abrir el
-# que estaba cerrado) y medimos cuántas personas atendidas se ganan o se pierden. Así distinguimos los sitios indispensables de los que
-# se pueden reemplazar.
 
 # %%
 SOL_EXTRA = {}   # soluciones auxiliares que se revisan al final (sección 11.1)
@@ -892,8 +817,6 @@ md(f"**Lectura:** cambiar la decisión de un solo sitio respecto a la red base c
 
 # %% [markdown]
 # ## 8. Escenarios de reducción presupuestal
-# El grupo escogió dos recortes dentro del rango del enunciado: **−15 %** (el extremo inferior) y **−30 %** (el extremo superior). Los
-# niveles −20 % y −25 % se agregan solo para dibujar la curva.
 
 # %%
 ESCENARIOS = {"Base": BASE}
@@ -1003,10 +926,6 @@ md(f'''### Interpretación de los escenarios
 
 # %% [markdown]
 # ## 9. Análisis de sensibilidad
-# Cambiamos un supuesto a la vez. Partimos de los supuestos y rangos que el grupo ya había definido en la hoja `Parametros` (fracción $f$,
-# tamaño de hogar y costo fijo por plaza $c_f$) y agregamos pruebas de robustez: rango ABAG/Hazus de $f$, distancia máxima, economías de
-# escala $\phi$, fuente de distancias (solo OSRM, o con los 48 pares de 140–160 km verificados en Google Maps el 5-oct-2026), reserva,
-# tarifa de transporte y las lecturas alternativas de las decisiones metodológicas adoptadas (sección 9.0).
 
 # %%
 SENS = {
@@ -1104,7 +1023,7 @@ md(f'''**Lectura.**
 
 # %% [markdown]
 # ### 9.1 Costo fijo por plaza $c_f$ × fracción $f$ × presupuesto (reemplaza la tabla preliminar)
-# Al comienzo del proyecto el grupo hizo una tabla preliminar de "techo de personas" (`data/raw/preliminar/sensibilidad_costo_fijo_preliminar.csv`)
+# Al comienzo del proyecto se hizo una tabla preliminar de "techo de personas" (`data/raw/preliminar/sensibilidad_costo_fijo_preliminar.csv`)
 # con distancias que no quedaron documentadas. Aquí la recalculamos **con el MILP y la matriz final de distancias** para las mismas 72
 # combinaciones y comparamos. Mostramos **dos lecturas**:
 #
@@ -1207,27 +1126,6 @@ md(f"**Abiertos en todos los escenarios:** {', '.join(freq[freq == 1].index) or 
 
 # %% [markdown]
 # ## 10. Extensión propia: equidad territorial (piso departamental α y piso municipal β)
-#
-# **Qué problema resuelve.** La solución base es eficiente, pero deja departamentos y municipios grandes sin ninguna atención (sección 6).
-# En una respuesta humanitaria no es aceptable, ni política ni éticamente, dejar por fuera territorios completos (principio de
-# imparcialidad). Por eso la extensión agrega una **nueva variable de decisión** y **dos nuevas familias de restricciones**:
-#
-# | Elemento | Definición |
-# |---|---|
-# | Nuevo conjunto | $k \in \mathcal{K}$ = departamentos (Valle del Cauca, Risaralda, Caldas, Quindío); $I_k \subseteq I$ son los municipios de $k$ |
-# | Nueva variable | $\alpha \in [0,1]$: cobertura mínima garantizada a **todos** los departamentos |
-# | (E1) nueva familia | $\displaystyle\sum_{i\in I_k}\sum_{j\in J_i} x_{ij} \;\ge\; \alpha \sum_{i\in I_k} d_i \qquad \forall k\in\mathcal{K}$ |
-# | (E2) piso de política | $\alpha \ge \underline{\alpha}$ (el piso lo fija quien decide) |
-# | (E3) nueva familia (piso municipal) | $\displaystyle\sum_{j\in J_i} x_{ij} \;\ge\; \beta\, d_i \qquad \forall i\in I$, con $\beta\in[0,1]$ como parámetro de política |
-#
-# **Cómo la usamos.**
-# 1. Calculamos el máximo piso alcanzable $\alpha^* = \max \alpha$ s.a. R1–R5 y E1 (problema *max-min*) **resolviendo el MILP
-#    directamente** (MILP max α), y comprobamos que el piso de la siguiente décima de punto es infactible. Como $x_{ij}$ es entero,
-#    $\alpha^*$ es un cociente exacto (personas / demanda del departamento que limita); lo reportamos con dos decimales y **sin redondear
-#    hacia arriba**, porque cualquier piso mayor que $\alpha^*$ es infactible.
-# 2. Para cada piso $\underline{\alpha}\in[0,\alpha^*]$ resolvemos el modelo lexicográfico con E1–E2 y trazamos la **frontera
-#    eficiencia–equidad**. Las personas que se dejan de atender frente a la base son el **precio de la equidad**.
-# 3. Hacemos lo mismo con el piso municipal $\beta$ (E3), que además obliga a que **ningún municipio** quede en 0 %.
 
 # %%
 def _modelo_equidad(inst, nombre, beta_min=None, alpha_var=True):
@@ -1566,11 +1464,4 @@ presupuesto fija el número de atendidos ({es(at_f5.min())}–{es(at_f5.max())} 
 quedan por fuera y necesitan otra solución (subsidio de arriendo, familias de acogida). Con $B$ fijo, $c_f$ mueve los atendidos entre
 {es(pe.min())} y {es(pe.max())}.
 
-**Limitaciones y pendientes de validación.** Costo fijo por plaza $c_f$ y factores φ provisionales (sin fuente colombiana); RUD de un agregador
-secundario (corte 17-sep-2026, registro abierto); distancias de la ruta más rápida sobre la red previa al sismo (sin cierres); matriz que
-combina Google Maps (164 pares verificados) y OSRM (resto; los 48 pares de 140–160 km se verificaron como control); un solo periodo; un punto
-por municipio (cabecera DIVIPOLA); un kit de cada tipo por persona para los 3 meses; transporte de ida, pagado una vez.
-**Decisiones metodológicas adoptadas:** 17 candidatos con 10 pequeños (sin ellos no se llega a 15; si se excluyeran, con $B$ recalculado la
-base bajaría a {es(gr.loc["base", "atendidos"])}); presupuesto sobre el costo total (R4; con R4' serían {es(g4.loc["base", "atendidos"])});
-matriz combinada Google Maps/OSRM (con solo OSRM la red base no cambia).
 ''')
